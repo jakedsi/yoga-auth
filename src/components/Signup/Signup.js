@@ -13,7 +13,7 @@ export default function Signup() {
         const [err, errFunc] = React.useState(false)
         const [succ, succFunc] = React.useState(false)
 
-        let baseUrl = 'https://myserver-yoga-auth.herokuapp.com/'
+        let baseUrl = 'https://myserver-yoga-auth.herokuapp.com'
 
         function changeMe(event){
             const {name, value, checked, type} = event.target
