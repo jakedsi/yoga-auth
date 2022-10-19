@@ -18,7 +18,7 @@ export default function Navbar() {
                 {
                 localStorage.getItem("token")
                 ?
-                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile" end> Profile </NavLink></li></>
+                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile"> Profile </NavLink></li></>
                 :
                 <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/login" end> Login </NavLink></li></>
                 }
@@ -41,7 +41,7 @@ export default function Navbar() {
                 {
                 localStorage.getItem("token")
                 ?
-                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile" end> Profile </NavLink></li></>
+                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile"> Profile </NavLink></li></>
                 :
                 <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/login" end> Login </NavLink></li></>
                 }
