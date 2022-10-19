@@ -47,7 +47,11 @@ export default function Navbar() {
                 ?
                 <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile" end> Profile </NavLink></li></>
                 :
-                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/login" end> Login </NavLink></li></>
+                <>
+                    <li className=' cursor-pointer hover:text-purple-100 '>
+                        <a href="/login">Login</a>
+                    </li>
+                </>
                 }
         </ul>
     </div>
