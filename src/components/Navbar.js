@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/images/logo.png'
-import { NavLink, Link} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 export default function Navbar() {
     const [nav, navState] = React.useState(false)
@@ -20,11 +20,7 @@ export default function Navbar() {
                 ?
                 <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile" end> Profile </NavLink></li></>
                 :
-                <>
-                    <li className=' cursor-pointer hover:text-purple-100 '>
-                        <a href="/login">Login</a>
-                    </li>
-                </>
+                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/login" end> Login </NavLink></li></>
                 }
 
             </ul>
@@ -47,11 +43,7 @@ export default function Navbar() {
                 ?
                 <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/profile" end> Profile </NavLink></li></>
                 :
-                <>
-                    <li className=' cursor-pointer hover:text-purple-100 '>
-                        <a href="/login">Login</a>
-                    </li>
-                </>
+                <><li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/login" end> Login </NavLink></li></>
                 }
         </ul>
     </div>
