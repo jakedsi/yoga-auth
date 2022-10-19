@@ -34,7 +34,7 @@ export default function Login() {
           .then(response => {
             localStorage.setItem("token", response.data.token)
             localStorage.setItem("username", response.data.username)
-            // window.location.href = '/profile/' + e.target.username.value
+            window.location.href = '/profile/' + e.target.username.value
           })
           .catch(error => errFunc(error.response.data))
     }

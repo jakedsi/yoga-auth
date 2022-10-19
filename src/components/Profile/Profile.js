@@ -36,7 +36,7 @@ export default function Profile() {
   const user = localStorage.getItem("username")
 
   React.useEffect(()=>{
-    axios.get('/profile/' + user + '/id/' + g._id)
+    axios.get('https://myserver-yoga-auth.herokuapp.com/profile/' + user + '/id/' + g._id)
     .then(response =>{
       funcProfileData(response.data)
     }).catch(err => {
@@ -51,7 +51,7 @@ export default function Profile() {
   }
 
   function deleteAccount(id){
-    axios.delete('/delete/' + id)
+    axios.delete('https://myserver-yoga-auth.herokuapp.com/delete/' + id)
     .then(response => {
       console.log('Successfully Deleted!')
       localStorage.removeItem("token")
@@ -86,7 +86,7 @@ export default function Profile() {
       fullname : e.target.fullname.value
     }
 
-    axios.put('/update/' + e.target.id.value, {newData} )
+    axios.put('https://myserver-yoga-auth.herokuapp.com/update/' + e.target.id.value, {newData} )
     .then(response => {
         console.log(response.data)
     })
