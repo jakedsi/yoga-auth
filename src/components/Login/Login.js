@@ -7,24 +7,27 @@ export default function Login() {
         username : "",
         password : ""
         })
-    const [err, funcErr] = React.useState('')
-    
-        function changeMe(event){
-          const {name, value, checked, type} = event.target
-          funcInput(prevValue =>{
-              return {
-                  ...prevValue,
-                  [name] : type === "checkbox" ? checked : value
-              }
-          })
-          funcErr('')
-      }
+        const [err, errFunc] = React.useState(false)
+        const [succ, succFunc] = React.useState(false)
 
-    function logMeIn(e){
-        e.preventDefault()
+        let baseUrl = 'https://myserver-yoga-auth.herokuapp.com'
+
+        function changeMe(event){
+            const {name, value, checked, type} = event.target
+            funcInput(prevValue =>{
+                return {
+                    ...prevValue,
+                    [name] : type === "checkbox" ? checked : value
+                }
+            })
+            errFunc('')
+        }
+
+    function logMeIn(ev){
+        ev.preventDefault()
         const details ={
-            username : e.target.username.value,
-            password : e.target.password.value
+            username : ev.target.username.value,
+            password : ev.target.password.value
           }
           console.log(details)
           console.log("test")
