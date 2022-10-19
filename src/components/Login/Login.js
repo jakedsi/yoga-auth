@@ -36,7 +36,7 @@ export default function Login() {
             localStorage.setItem("username", response.data.username)
             // window.location.href = '/profile/' + e.target.username.value
           })
-          .catch(error => funcErr(error.response.data))
+          .catch(error => errFunc(error.response.data))
     }
     const withoutQuotes = err ? err.replaceAll('"', ''): ''
 
