@@ -26,11 +26,11 @@ export default function Login() {
             username : e.target.username.value,
             password : e.target.password.value
           }
-          axios.post('/login', {details})    
+          axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
           .then(response => {
             localStorage.setItem("token", response.data.token)
             localStorage.setItem("username", response.data.username)
-            window.location.href = '/profile/' + e.target.username.value
+            // window.location.href = '/profile/' + e.target.username.value
           })
           .catch(error => funcErr(error.response.data))
     }
