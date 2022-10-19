@@ -1,0 +1,86 @@
+@media only screen and (max-width: 1366px) {
+    .dot1 img{
+        left: 21.2vw;
+    }
+    .dot2 img{
+        left: 49.1vw;
+    }
+    .dot3 img{
+        left: 59.1vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 1260px){
+
+    .hero-text .arrow{
+        display: none;
+    }
+    
+    }
+
+
+  @media only screen and (max-width: 1024px) {
+
+
+    .dot3 img{
+        left: 62.1vw;
+        height: 3%;
+        width: 19%;
+    }
+    .dot2 img{
+        left : 48.7vw
+    }
+    .dot1 img{
+        width: 15%;
+        height: 3%;
+    }
+
+    .hero-text .arrow{
+        display: none;
+    }
+
+    .yoga-pose{
+        width: 90%;
+    }
+    .yoga-benefits{
+        gap: 6vw;
+    }
+    .square-container{
+        margin-left: 6vh;
+        height: 65vh;
+    }
+
+    .square-a2{
+        right: 10%;
+    }
+    .square-c1{
+        top: 30%;
+        right: 5%;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 900px){
+        .hero-text{
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+
+        .all-text{
+            border-left : 0px solid black
+        }
+
+        .all-text h1{
+            width: 100%;
+        }
+
+        .hero-text button{
+            width: 20vw;
+            height: 5vh;
+            font-size: 1.2rem;
+        }
+
+  }
