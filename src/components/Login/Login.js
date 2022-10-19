@@ -24,23 +24,21 @@ export default function Login() {
         }
 
     function logMeInPlease(e){
-        console.log(details)
-        console.log("test")
         e.preventDefault()
         const details ={
             username : e.target.username.value,
             password : e.target.password.value
           }
 
-        //   axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
-        //   .then(response => {
-        //     localStorage.setItem("token", response.data.token)
-        //     localStorage.setItem("username", response.data.username)
-        //     // window.location.href = '/profile/' + e.target.username.value
-        //   })
-        //   .catch(error => funcErr(error.response.data))
+          axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
+          .then(response => {
+            localStorage.setItem("token", response.data.token)
+            localStorage.setItem("username", response.data.username)
+            // window.location.href = '/profile/' + e.target.username.value
+          })
+          .catch(error => funcErr(error.response.data))
     }
-    // const withoutQuotes = err.replaceAll('"', ''); just another bug
+    const withoutQuotes = err ? err.replaceAll('"', ''): ''
 
   return (
     <div className='not-home'>
@@ -61,7 +59,7 @@ export default function Login() {
             </div>
             <p className='font-thin text-[13px]'>New Here? <a href='/signup'><span className='font-medium cursor-pointer' >Signup</span></a></p>
             </form>
-            {/* <div className='text-red-500 text-[15px] w-full text-center'>{withoutQuotes}</div> */}
+            <div className='text-red-500 text-[15px] w-full text-center'>{withoutQuotes}</div>
         </div>
     </div>
   )
