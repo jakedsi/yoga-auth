@@ -23,14 +23,15 @@ export default function Login() {
             errFunc('')
         }
 
-    function logMeIn(ev){
-        ev.preventDefault()
+    function logMeInPlease(e){
+        console.log(details)
+        console.log("test")
+        e.preventDefault()
         const details ={
             username : ev.target.username.value,
             password : ev.target.password.value
           }
-          console.log(details)
-          console.log("test")
+
         //   axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
         //   .then(response => {
         //     localStorage.setItem("token", response.data.token)
@@ -44,13 +45,13 @@ export default function Login() {
   return (
     <div className='not-home'>
         <div className='flex justify-center w-screen h-[67vh] items-center flex-wrap'>
-            <form  onSubmit={logMeIn} className='w-[60%] h-[75%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[80%]'>
+            <form  onSubmit={logMeInPlease} className='w-[60%] h-[75%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[80%]'>
                 <h1 className='uppercase text-[20px] font-black xl:text-[25px]'>Login</h1>
                 <p className=' leading-4 text-[12px] opacity-30 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo culpa odio fuga atque alias voluptatum nemo dolorem vero amet fugiat</p>
             <div className='flex flex-col justify-center items-center'>
 
                 <label className='mt-4 text-[14px]'>Username</label>
-                <input type="text" name='username' className='w-[80%] mt-2 h-8 rounded-sm border-white focus:outline-none focus:border-sky-500 text-black text-center' defaultValue={inputVal.username} onChange={changeMe}/>
+                <input type="text" onChange={changeMe} defaultValue={inputVal.username} name="username" className='w-[80%] mt-2 h-8 rounded-sm border-white focus:outline-none focus:border-sky-500 text-black text-center'/>
 
                 <label className='mt-3 text-[14px]'>Password</label>
                 <input type="password" name='password' className='w-[80%] mt-2 h-8 rounded-sm border-white focus:outline-none focus:border-sky-500 text-black text-center' defaultValue={inputVal.password} onChange={changeMe}/>
