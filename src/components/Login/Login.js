@@ -60,7 +60,7 @@ export default function Login() {
             </div>
             <p className='font-thin text-[13px]'>New Here? <a href='/signup'><span className='font-medium cursor-pointer' >Signup</span></a></p>
             </form>
-            <div className='text-red-500 text-[15px] w-full text-center'>{withoutQuotes}</div>
+            {/* <div className='text-red-500 text-[15px] w-full text-center'>{withoutQuotes}</div> */}
         </div>
     </div>
   )
