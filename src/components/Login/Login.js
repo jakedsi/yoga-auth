@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-
+import { NavLink} from 'react-router-dom'
 export default function Login() {
 
     const [inputVal, funcInput] = React.useState({
@@ -53,7 +53,7 @@ export default function Login() {
                 <label className='opacity-50 text-xs cursor-pointer'>Forgot Password?</label>
                 <button type="submit" className='my-7 w-[80%] py-2 bg-amber-800 rounded-sm hover:bg-amber-900' disabled>Submit</button>
             </div>
-            <p className='font-thin text-[13px]'>New Here? <a href='/signup'><span className='font-medium cursor-pointer' >Signup</span></a></p>
+            <p className='font-thin text-[13px]'>New Here?<NavLink exact="true" activeclassname="active" to="/signup" end> <span className='font-medium cursor-pointer' >Signup</span> </NavLink></p>
             </form>
             <div className='text-red-500 text-[15px] w-full text-center'>{withoutQuotes}</div>
         </div>
