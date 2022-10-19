@@ -28,8 +28,8 @@ export default function Login() {
         console.log("test")
         e.preventDefault()
         const details ={
-            username : ev.target.username.value,
-            password : ev.target.password.value
+            username : e.target.username.value,
+            password : e.target.password.value
           }
 
         //   axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
