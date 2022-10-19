@@ -27,6 +27,7 @@ export default function Login() {
             password : e.target.password.value
           }
           console.log(details)
+          console.log("test")
         //   axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
         //   .then(response => {
         //     localStorage.setItem("token", response.data.token)
@@ -52,7 +53,7 @@ export default function Login() {
                 <input type="password" name='password' className='w-[80%] mt-2 h-8 rounded-sm border-white focus:outline-none focus:border-sky-500 text-black text-center' defaultValue={inputVal.password} onChange={changeMe}/>
   
                 <label className='opacity-50 text-xs cursor-pointer'>Forgot Password?</label>
-                <button type="submit" className='my-7 w-[80%] py-2 bg-amber-800 rounded-sm hover:bg-amber-900' disabled>Submit</button>
+                <button type="submit" className='my-7 w-[80%] py-2 bg-amber-800 rounded-sm hover:bg-amber-900 cursor-pointer' disabled>Submit</button>
             </div>
             <p className='font-thin text-[13px]'>New Here? <a href='/signup'><span className='font-medium cursor-pointer' >Signup</span></a></p>
             </form>
