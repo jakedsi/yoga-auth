@@ -11,7 +11,7 @@ export default function Navbar() {
     <div className="container flex flex-wrap justify-between items-center mx-auto">
         <img src={logo} alt="logo" className=" h-12"/>
      
-            <ul className='md:flex gap-10 text-sm sm:hidden text-pink-50'>
+            <ul className='md:flex gap-10 text-sm xs:hidden text-pink-50'>
                 <li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/" end> Home </NavLink></li>
                 <li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/classes" end> Classes </NavLink></li>
                 <li className=' cursor-pointer hover:text-purple-100 '><NavLink exact="true" activeclassname="active" to="/about" end> About Us </NavLink></li>
@@ -24,11 +24,11 @@ export default function Navbar() {
                 }
 
             </ul>
-            <div className='md:flex items-center sm:hidden'>
+            <div className='md:flex items-center xs:hidden'>
                 <span className='text-sm tracking-widest font-extralight'>Interested?</span>&nbsp; <span><b>Contact Us</b></span>
             </div>
 
-        <button className='sm:block md:hidden border-2 rounded' onClick={()=> navState((prev) => !prev)}>
+        <button className='xs:block md:hidden border-2 rounded' onClick={()=> navState((prev) => !prev)}>
                 <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd">
                     </path>
