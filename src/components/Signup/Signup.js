@@ -39,6 +39,8 @@ export default function Signup() {
         if(e.target.password.value !== e.target.repeat_password.value) return errFunc("Password doesn't match");
         try {
             setLoading(true);
+            succFunc(false);
+            errFunc(false);
             await axios.post(baseUrl + '/add', {details})
             .then(response => {
                 console.log(response.data)
