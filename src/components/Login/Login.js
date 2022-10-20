@@ -10,7 +10,7 @@ export default function Login() {
         })
         const [err, errFunc] = React.useState(false)
         // const [succ, succFunc] = React.useState(false)
-        const [loading, setLoading] = React.useState(true);
+        const [loading, setLoading] = React.useState(false);
 
         function changeMe(event){
             const {name, value, checked, type} = event.target
@@ -23,21 +23,6 @@ export default function Login() {
             errFunc('')
         }
 
-    // function logMeInPlease(e){
-    //     e.preventDefault()
-    //     const details ={
-    //         username : e.target.username.value,
-    //         password : e.target.password.value
-    //       }
-
-    //       axios.post('https://myserver-yoga-auth.herokuapp.com/login', {details})    
-    //       .then(response => {
-    //         localStorage.setItem("token", response.data.token)
-    //         localStorage.setItem("username", response.data.username)
-    //         window.location.href = '/profile/' + e.target.username.value
-    //       })
-    //       .catch(error => errFunc(error.response.data))
-    // }
 
     const logMeInPlease = async (e) => {
         e.preventDefault()
