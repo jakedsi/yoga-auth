@@ -43,7 +43,7 @@ export default function Signup() {
   return (
     <div className='not-home'>
         <div className='flex justify-center w-screen h-screen items-center xl:h-[80vh]'>
-            <form  onSubmit={signMeUp} className='w-[60%] h-[70%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[85%] lg:w-[40%] 2xl:w-[35%] mb-auto mt-[10vh]'>
+            <form  onSubmit={signMeUp} className='xs:w-[100%] sm:w-[60%] h-[70%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[85%] lg:w-[40%] 2xl:w-[35%] mb-auto mt-[10vh]'>
                 <h1 className='uppercase text-[20px] font-black xl:text-[25px]'>Signup</h1>
                 <p className=' leading-4 text-[12px] opacity-30 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo culpa odio fuga atque alias voluptatum nemo dolorem vero amet fugiat</p>
             <div className='flex flex-col justify-center items-center'>

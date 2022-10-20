@@ -43,7 +43,7 @@ export default function Login() {
   return (
     <div className='not-home'>
         <div className='flex justify-center w-screen h-[67vh] items-center flex-wrap'>
-            <form  onSubmit={logMeInPlease} className='w-[60%] h-[75%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[80%]'>
+            <form  onSubmit={logMeInPlease} className='xs:w-[100%] sm:w-[60%] sm:h-[75%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[80%]'>
                 <h1 className='uppercase text-[20px] font-black xl:text-[25px]'>Login</h1>
                 <p className=' leading-4 text-[12px] opacity-30 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo culpa odio fuga atque alias voluptatum nemo dolorem vero amet fugiat</p>
             <div className='flex flex-col justify-center items-center'>
