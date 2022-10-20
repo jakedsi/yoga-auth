@@ -24,13 +24,13 @@ export default function YogaTechniques() {
   return (
     <div>
         <section className="2xl:h-96 sm:mt-14 bg-slate-800 bg-opacity-25 lg:mt-1 pb-8">
-            <img src={yogaTechHead} alt="" className='block mx-auto pt-5'/>
-            <div className='flex mt-8 mx-5 justify-center 2xl:gap-5 sm:flex-col sm:items-center sm:gap-5 lg:flex-row'>
+            <img src={yogaTechHead} alt="" className='block mx-auto pt-5 xs:h-[70px] sm:h-[91px]' />
+            <div className='flex mt-8 mx-5 justify-center 2xl:gap-5 xs:flex-col xs:items-center xs:gap-5 lg:flex-row'>
                 {
                     arr.map((img,i) =>{
                         return(
                             <>
-                                <div  key={i} className='yoga-img 2xl:w-96 2xl:relative sm:relative'>
+                                <div  key={i} className='yoga-img 2xl:w-96 relative'>
                                 <img src={img.imageLoc} alt="" className='2xl:w-full 2xl:h-48 2xl:object-cover'/>
                                 <h5 className='absolute m-0 bottom-0 w-full text-center py-3 text-[24px] text-pink-50 font-light tracking-widest bg-slate-700 bg-opacity-25'>{img.imageText}</h5>
                                 </div>
