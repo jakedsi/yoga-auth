@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import {ReactComponent as Preloader} from '../../assets/svgs/loader.svg'
 
 export default function Signup() {
 
@@ -12,6 +13,7 @@ export default function Signup() {
         
         const [err, errFunc] = React.useState(false)
         const [succ, succFunc] = React.useState(false)
+        const [loading, setLoading] = React.useState(false);
 
         let baseUrl = 'https://myserver-yoga-auth.herokuapp.com'
 
@@ -25,25 +27,36 @@ export default function Signup() {
             })
             errFunc('')
         }
-    function signMeUp(e){
+
+
+    const signMeUp = async (e) => {
         e.preventDefault()
-        if(e.target.password.value !== e.target.repeat_password.value) return errFunc("Password doesn't match")
         const details ={
             fullname : e.target.fullname.value,
             username : e.target.username.value,
             password : e.target.password.value,
         }
-        axios.post(baseUrl + '/add', {details})
-        .then(response => {
-            console.log(response.data)
-            succFunc('Successfully Registered')
-        })
-        .catch(error => errFunc(error.response.data))
-    }
+        if(e.target.password.value !== e.target.repeat_password.value) return errFunc("Password doesn't match");
+        try {
+            setLoading(true);
+            await axios.post(baseUrl + '/add', {details})
+            .then(response => {
+                console.log(response.data)
+                succFunc('Successfully Registered')
+            })
+            .catch(error => errFunc(error.response.data))
+            setLoading(false);
+        } catch (err) {
+            setLoading(false);
+            console.error(err);
+        }
+    };
+
+    const withoutQuotes = err ? err.replaceAll('"', ''): ''
   return (
     <div className='not-home'>
         <div className='flex justify-center w-screen h-screen items-center xl:h-[80vh]'>
-            <form  onSubmit={signMeUp} className='xs:w-[100%] sm:w-[60%] h-[70%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[85%] lg:w-[40%] 2xl:w-[35%] mb-auto mt-[10vh]'>
+            <form  onSubmit={signMeUp} className='xs:w-[100%] sm:w-[60%] xs:h-[80%] sm:h-[70%] bg-slate-600 bg-opacity-25 text-center px-5 py-5 text-pink-50 xl:w-[40%] xl:h-[85%] lg:w-[40%] 2xl:w-[35%] mb-auto mt-[10vh]'>
                 <h1 className='uppercase text-[20px] font-black xl:text-[25px]'>Signup</h1>
                 <p className=' leading-4 text-[12px] opacity-30 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo culpa odio fuga atque alias voluptatum nemo dolorem vero amet fugiat</p>
             <div className='flex flex-col justify-center items-center'>
@@ -62,9 +75,9 @@ export default function Signup() {
 
                 <button type="submit" className='my-7 w-[80%] py-2 bg-amber-800 hover:bg-amber-900 rounded-sm'>Submit</button>
             </div>
-            <div className='text-red-500 text-[15px] mt-3'>{err}</div>
-            <div className={succ ? 'text-green-500 text-[15px] mt-3 transition ease-in-out delay-150' : 'hidden'}>{succ}
-            </div>
+            <div className='w-full flex justify-center absolute'>{loading ? <div className='w-[60px]'><Preloader /></div>: <></>}</div>
+            <div className='text-red-500 text-[15px] mt-3 first-letter:uppercase'>{withoutQuotes}</div>
+            <div className={succ ? 'text-green-500 text-[15px] mt-3 transition ease-in-out delay-150' : 'hidden'}>{succ}</div>
             </form>
         </div>
     </div>
